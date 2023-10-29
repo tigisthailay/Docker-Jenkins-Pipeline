@@ -12,7 +12,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t tegisty/data2bots-docker-image .'
+        sh 'docker build -t tegisty/jenkins-docker-image .'
       }
     }
     stage('Login') {
@@ -22,7 +22,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push tegisty13/data2bots-docker-image'
+        sh 'docker push tegisty13/jenkins-docker-image'
       }
     }
   }
