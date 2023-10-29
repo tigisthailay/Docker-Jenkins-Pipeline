@@ -1,10 +1,13 @@
 pipeline {
-  agent any
+  //agent any or
+  agent {
+    label 'docker' 
+  }
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
   environment {
-    DOCKERHUB_CREDENTIALS = credentials('Docker_Credentials')
+    DOCKERHUB_CREDENTIALS = credentials('Docke_hub_credentials')
   }
   stages {
     stage('Build') {
